@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import LandingPage from "./components/ui/LandingPage";
 import StudyRooms from "./components/ui/StudyRooms";
+import SignUpPage from "./components/ui/SignUpPage";
+import Login from "./components/ui/Login";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -40,6 +42,34 @@ function AnimatedRoutes() {
               transition={{ duration: 0.4, ease: "easeInOut" }}
             >
               <StudyRooms />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <motion.div
+              key="signup"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              <SignUpPage />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <motion.div
+              key="login"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              <Login />
             </motion.div>
           }
         />
